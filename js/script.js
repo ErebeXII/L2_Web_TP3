@@ -39,6 +39,7 @@ function add() {
                             td_6.innerHTML = taskDate();
                             td_5.classList.remove("duree");
                             button_7.innerHTML= "Finished !";
+
                             }
                 );
 
@@ -62,7 +63,7 @@ function add() {
 
   }
 
-  function taskDate(){
+function taskDate(){
     var d = new Date();
     var date;
     date = d.getFullYear() + "-" + d.getMonth() + "-" + d.getDate() + " at " + d.getHours()+ ":" + d.getMinutes() + ":" + d.getSeconds();
@@ -97,7 +98,3 @@ let task = {
 
     }
 };
-
-for (let T of task){
-    console.log(T)
-}

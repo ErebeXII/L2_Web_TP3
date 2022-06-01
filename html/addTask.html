@@ -6,6 +6,7 @@
         <title>Add Task</title>
         <link rel= "stylesheet" href= "../styles/addTask.css">
         <script type="text/javascript" src="../js/script.js"></script>
+        <script src="../js/part_3.js"></script>
         <script type="text/javascript" src="../js/bender.js">create_robot()</script>
     </head>
 
@@ -67,7 +68,7 @@
                     min="2022-01-01" max="2050-12-31">
             
                     <button id="submit" 
-                    button onClick=add()>
+                    button onclick=pushTask()>
                         Add</button>
                     <button type="reset">Cancel</button>
                     <button onclick=deleteTable()>Delete</button>

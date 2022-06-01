@@ -43,7 +43,7 @@ table, th{
 }
 
 tr{
-    border-bottom: 1pt solid black;
+    text-decoration: underline;
 }
 
 button{
@@ -59,10 +59,11 @@ button:hover{
     background-color: wheat;
 }
 
-.td{
-    width: 100%;
-    border-right: 4em solid grey;
-    border-left: 4em solid grey;
+td{
+    text-decoration: none;
+    width: 16%;
+    border-right: 1em solid grey;
+    border-left: 1em solid grey;
 
 }
 
