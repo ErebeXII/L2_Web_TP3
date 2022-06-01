@@ -50,7 +50,7 @@ function pushTask(){
 }
 
 function createTask(name, category, date){
-    tr = document.createElement("tr");
+    let tr = document.createElement("tr");
     var td_1  = document.createElement("td");
     td_1.innerHTML = name;
 
@@ -79,7 +79,7 @@ function createTask(name, category, date){
             td_6.innerHTML = taskDate();
             td_5.classList.remove("duree");
             button_7.innerHTML= "Finished !";
-
+            tr.style.backgroundColor = "rgb(0,255,0)";
         }
     );
 
