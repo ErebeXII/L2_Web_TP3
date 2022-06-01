@@ -45,7 +45,7 @@ function pushTask(){
     /*console.log(console.table(myTasks));*/
     createTask(task.name, task.category, task.date);
 
-    getTasksFromTable();
+    /*getTasksFromTable(); if we want to get the new tasks list after each new addition */
     return 0;
 }
 
@@ -99,9 +99,9 @@ function createTask(name, category, date){
     return 0;
 }
 
-loadTasks();
 
-function loadTasks(){
+
+function loadTasksFromJSON(){
     /* due to the difficulties to access local JSON we add to get a little away from the instructions*/
     $.getJSON("https://raw.githubusercontent.com/ErebeXII/L2_Web_TP3/master/json/tasks.json", function (data){ /* JSON of the github of the TP*/
         console.log(data.tasks);
@@ -110,13 +110,29 @@ function loadTasks(){
     });
 }
 
+loadTasksFromJSON();
+
 function getTasksFromTable(){
     var tasks = [];
+    var name = "";
+    var category = "";
+    var date = "";
 
     table = document.getElementById("table");
     tds = table.getElementsByTagName("td");
 
-    console.log(console.table(tds));
+    for(let i = 0; i < tds.length; i++) {
+        if (i % 7 == 0)
+            name = tds[i].innerHTML;
+        if (i % 7 == 1)
+            category = tds[i].innerHTML;
+        if (i % 7 == 0) {
+            date = tds[i].innerHTML;
+            tasks.push(new Task(name, category, date));
+        }
+    }
+    /*console.log(tasks);*/
 
+    return tasks;
 }
 
