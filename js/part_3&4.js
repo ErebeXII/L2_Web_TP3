@@ -9,7 +9,6 @@ function getTaskFromForm(){
     return new Task(name_task, category, date);
 }
 
-
 class Task {
     constructor(name, category, date) {
         this.name = name;
@@ -43,17 +42,23 @@ function pushTask(){
     }
 
     myTasks.push(task);
-    console.log(console.table(myTasks));
+    /*console.log(console.table(myTasks));*/
+    createTask(task.name, task.category, task.date);
 
+    getTasksFromTable();
+    return 0;
+}
+
+function createTask(name, category, date){
     tr = document.createElement("tr");
     var td_1  = document.createElement("td");
-    td_1.innerHTML = task.name;
+    td_1.innerHTML = name;
 
     var td_2 = document.createElement("td");
-    td_2.innerHTML = task.category;
+    td_2.innerHTML = category;
 
     var td_3 = document.createElement("td");
-    td_3.innerHTML = task.date;
+    td_3.innerHTML = date;
 
     var td_4 = document.createElement("td");
     td_4.innerHTML = taskDate();
@@ -61,7 +66,6 @@ function pushTask(){
     var td_5 = document.createElement("td");
     td_5.classList.add("duree");
     td_5.innerHTML = "0";
-
 
     var td_6 = document.createElement("td");
     td_6.innerHTML = "";
@@ -92,8 +96,27 @@ function pushTask(){
     table = document.getElementById("table");
     table.appendChild(tr);
 
-
-
     return 0;
+}
+
+loadTasks();
+
+function loadTasks(){
+    /* due to the difficulties to access local JSON we add to get a little away from the instructions*/
+    $.getJSON("https://raw.githubusercontent.com/ErebeXII/L2_Web_TP3/master/json/tasks.json", function (data){ /* JSON of the github of the TP*/
+        console.log(data.tasks);
+        for(let i = 0; i<data.tasks.length; i++)
+            createTask(data.tasks[i].name, data.tasks[i].category, data.tasks[i].date);
+    });
+}
+
+function getTasksFromTable(){
+    var tasks = [];
+
+    table = document.getElementById("table");
+    tds = table.getElementsByTagName("td");
+
+    console.log(console.table(tds));
+
 }
 
