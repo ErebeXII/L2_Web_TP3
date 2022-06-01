@@ -92,5 +92,8 @@ function pushTask(){
     table = document.getElementById("table");
     table.appendChild(tr);
 
+
+
     return 0;
 }
+

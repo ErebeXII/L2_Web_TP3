@@ -1,0 +1,21 @@
+{
+  "tasks": [
+    {
+      "name": "RDV colonoscopy",
+      "category": "Perso",
+      "date": "2022-04-21"
+    },
+
+    {
+      "name": "RDV becoming wealthy",
+      "category": "Pro",
+      "date": "2022-04-21"
+    },
+
+    {
+      "name": "mexican dinner",
+      "category": "Shared",
+      "date": "2022-04-22"
+    }
+  ]
+}
