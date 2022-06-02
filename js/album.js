@@ -12,8 +12,6 @@ function loadAlbum(){
                 createTask(data.tasks[i].id, data.tasks[i].title);
             }
             page.push([data.tasks[i].id, data.tasks[i].title]);
-            console.log(page)
-            console.log()
             if(i % size_per_page == 0){
                 album.push(page);
                 page = [];
@@ -27,11 +25,7 @@ function nextPage(){
     let table = document.getElementById("table_album");
     let i;
 
-    if(current_page + 1 >= album.length){
-        current_page = 0;
-    }
-    else
-        current_page++;
+    current_page  = (current_page + 1) % album.length;
 
     for(i = 0; i < size_per_page; i++){
         table.removeChild(table.lastChild);
