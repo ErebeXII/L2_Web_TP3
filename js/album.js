@@ -28,7 +28,8 @@ function nextPage(){
     current_page  = (current_page + 1) % album.length;
 
     for(i = 0; i < size_per_page; i++){
-        table.removeChild(table.lastChild);
+        if(table.children.length > 1)
+            table.removeChild(table.lastChild);
     }
 
 
