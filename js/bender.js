@@ -51,9 +51,9 @@ function activate_bot() {
 
     console.log("BOT GO !");
     create_robot();
-    const tasks = document.getElementsByClassName("datatable")[0];
-    for (let i = 1; i < tasks.rows.length; i++) {
-        get_bot_action(tasks.rows[i].cells[0].innerText);
+    const table_tasks = document.getElementById("table");
+    for (let i = 1; i < table_tasks.rows.length; i++) {
+        get_bot_action(table_tasks.rows[i].cells[0].innerText);
     }
 
     function get_bot_action(query) {
