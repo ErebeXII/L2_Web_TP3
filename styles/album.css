@@ -1,41 +1,25 @@
-
 html{
     background-color: lavender;
-
 }
 
 body{
-    
+    width: fit-content;
+    margin : 0 auto;
+    padding: 0 20px 20px 20px;
+    font-size: 20px;
     text-align: center;
+
     justify-content: center;
     box-sizing: border-box;
     font-family: Verdana;
-    text-decoration: none;
 
 }
 
-article{
-    padding: 0px;
-    list-style: none;
-    text-align: center;
-}
-article ol{
-    list-style: none;
-    padding: 0px;
-}
-
-section ul{
-    padding: 0px;
-}
-
-section li{
-    padding: 0.3em;
-}
 
 #menu,#menu ul{
     margin: 0 ;
     padding: 0;
-    
+
 }
 
 #menu ul{
@@ -45,10 +29,11 @@ section li{
     left: 0;
     right: 0;
     overflow:hidden;
-    -moz-transition: .8s all .3s; /* for mozilla*/
-    -webkit-transition: .8s all .3s; /* for chromium */
+    -moz-transition: .8s all .3s;
+    -webkit-transition: .8s all .3s;
     transition: .8s all .3s;
-    border-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     margin-top: 0.5em;
 
 }
@@ -65,12 +50,12 @@ section li{
 #menu > li:first-child{
 
     background-color:rgb(9, 9, 90);
-    
+
 }
 
 #menu > li:first-child ul{
     background-color:rgb(9, 9, 90);
-    
+
 }
 
 
@@ -91,7 +76,7 @@ section li{
 
 
 #menu > li:nth-child(2) li:hover{
-   
+
     background-color: wheat;
 }
 
@@ -107,10 +92,6 @@ section li{
     margin: 1em;
 }
 
-#menu li:hover{
-    border-radius: 10px;
-}
-
 #menu > li{
     display: inline-block;
     width: 200px;
@@ -121,48 +102,48 @@ section li{
 
 
 #menu li:hover ul{
-    max-height:15em; 
+    max-height:15em;
     text-align: center;
 
-    
+
 }
 
 #menu a:hover{
     color: yellowgreen;
     text-decoration: underline;
-
 }
 #menu a{
     color: cyan;
     text-decoration: none;
 }
 
-/* ----------------------------------------- */
-/*HEADER*/
-.header, .footer{
-    text-align:center;
+
+#table_container{
+    display: flex;
+    width: 100%;
     justify-content: center;
-    box-sizing: border-box;
-    font-family: Verdana;
-    margin:2em 3% 1% 3%;
-    padding:0.05em 0 0.05em 0;
-    border:1px ;
-    border-radius:25px;
-    box-shadow: 0px 0px 15px #333;
-    font-size:50%;
+    background-color: gray;
+    padding: 1em;
+    border-radius: 10px;
+    margin-top: 2em;
 }
-.header img{
-    width: 40%;
-    height: 40%;
-    border: 3px solid #fff;  
+
+#table_album{
+    width: inherit;
+    border-collapse: collapse;
+    text-align: center;
+    justify-content: center;
 }
-/* ----------------------------------------- */
-/* FOOTER */
-.footer{
-    position :relative;
-    bottom : 0;
-    font-size:100%;
+
+tr{
+    width: auto;
 }
-.footer a{
-    color : black;
+
+th{
+    width: inherit;
+    padding: 0.5em;
 }
+td{
+    padding: 0.2em;
+}
+

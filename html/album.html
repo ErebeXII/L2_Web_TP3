@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<!-- Here we will do the second step of the 4th part-->
+
+<html lang="en">
+    <head>
+        <link rel= "stylesheet" href= "../styles/album.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../js/album.js"></script>
+        <title>Album</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <ul id="menu">
+                <li> <a href="">Manage tasks</a>
+                    <ul>
+                        <li><a href="../html/addTask.html">Add task</a></li>
+                        <li><a href="">Delete task</a></li>
+                        <li><a href="">Update task</a></li>
+                    </ul>
+                </li>
+                <li> <a href="">My tasks</a>
+                    <ul>
+                        <li><a href="../html/perso.html">Personal task</a></li>
+                        <li><a href="../html/pro.html">Professional task</a></li>
+                        <li><a href="../html/shared.html">Shared task</a></li>
+                        <li><a href="../html/album.html">Album</a></li>
+                    </ul>
+                <li><a href="">About</a></li>
+
+            </ul>
+        </div>
+
+    <div id="table_container">
+        <table id="table_album">
+            <tr>
+                <th>Number</th>
+                <th>Task</th>
+                <th>Status</th>
+            </tr>
+        </table>
+
+    </div>
+        <button onclick=nextPage()>Next Page</button>
+    </body>
+</html>

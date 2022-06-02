@@ -75,9 +75,13 @@ function createTask(name, category, date){
 
     let button_7 = document.createElement("button");
     button_7.innerHTML = "Finish Task";
+    var finished = false;
     button_7.addEventListener("click",
         function (){
-            td_6.innerHTML = taskDate();
+            if(!finished) {
+                td_6.innerHTML = taskDate();
+                finished = true;
+            }
             td_5.classList.remove("duree");
             button_7.innerHTML= "Finished !";
             tr.style.backgroundColor = "rgb(0,255,0)";
@@ -101,11 +105,12 @@ function createTask(name, category, date){
 }
 
 
-function tableToJSON(task){
+function tableToJSON(){
     $.getJSON("https://raw.githubusercontent.com/ErebeXII/L2_Web_TP3/master/json/tasks.json", function (data){ /* JSON of the github of the TP*/
         console.log("JSON string format :");
         console.log(JSON.stringify(getTasksFromTable()));
     });
+
 }
 
 
@@ -113,14 +118,16 @@ function loadTasksFromJSON(address){
     /* due to the difficulties to access local JSON we add to get a little away from the instructions*/
     $.getJSON(address, function (data){ /* JSON of the github of the TP*/
         /*console.log(data.tasks);*/
-        for(let i = 0; i<data.tasks.length; i++)
+        for(let i = 0; i<data.tasks.length; i++) {
             createTask(data.tasks[i].name, data.tasks[i].category, data.tasks[i].date);
+
+        }
     });
 }
 
 loadTasksFromJSON("https://raw.githubusercontent.com/ErebeXII/L2_Web_TP3/master/json/tasks.json");
 tableToJSON();
-loadTasksFromJSON("")
+
 function getTasksFromTable(){
     let tasks = [];
     let name = "";
